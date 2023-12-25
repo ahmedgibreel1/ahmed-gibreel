@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ورق العنب</title>
+</head>
+<style>
+    body{
+        background-image:linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,0.30)),url(rimage/backgroundrecipe1.jpg);
+        background-position: center;
+        background-size: cover;
+        min-height: 100vh;
+    }
+    div{
+        color: #fff;
+    }
+    h1{
+        text-align: center;
+        font-size: 64px;
+    
+    }
+    h2{
+    
+        font-size: 32px;
+        
+    }
+    li{
+    
+        font-size: 24px;
+        text-decoration: none;
+    }
+    h3{
+        
+        font-size: 32px;
+    }
+    ul {
+      list-style-type: none;
+    }
+</style>
+<body>
+    
+    
+<div dir="rtl">
+    <h1>وصفة ورق العنب</h1>
+
+    <h2>مكونات </h2>
+    <ul id="ingredients-list">
+        <li>ورق العنب المجمد أو الطازج (حوالي 40-50 ورقة)
+        </li>
+        <li>1 كوب أرز مصرٍّ (منقوع ومصفى)
+        </li>
+        <li>500 غرام لحم مفروم (لحم بقر أو خروف)
+        </li>
+        <li>1 بصلة متوسطة الحجم (مفرومة)
+        </li>
+        <li>2-3 فصوص ثوم (مفرومة)
+        </li>
+        <li>1/4 كوب زيت زيتون
+        </li>
+        <li>عصير ليمونتين
+        </li>
+        <li>ملح وفلفل أسود حسب الذوق
+        </li>
+        <li>1 ملعقة صغيرة بهارات مشكلة
+        </li>
+
+
+
+
+    </ul>
+
+    <h3>طريقة التحضير</h3>
+    <ol id="steps-list">
+        <li>يُغسل ورق العنب جيداً تحت الماء الجاري، ويترك في مصفاة ليُصفى.
+
+        </li>
+        <li>في وعاء كبير، يُخلط الأرز المصفى مع اللحم المفروم، البصل، الثوم، الزيت الزيتون، عصير الليمون، الملح، الفلفل الأسود، والبهارات المشكلة.
+
+        </li>
+        <li>يُفتح كل ورقة عنب ويُوضع فيها كمية صغيرة من الحشوة في الجزء السفلي للورقة.
+
+        </li>
+        <li>يُطوى الجوانب الجانبين للورقة نحو الداخل، ثم يُلف الورق حول الحشوة بشكل محكم.
+
+        </li>
+        <li>يُكرر هذا العمل حتى الانتهاء من جميع ورق العنب والحشوة.
+
+        </li>
+        <li>يُرتب ورق العنب الملفوف في قاع قدر كبير، مع ترتيبها بشكل متساوي.
+
+        </li>
+        <li>يُضاف الماء إلى القدر بحيث يُغمر ورق العنب.
+
+        </li>
+        <li>يُضاف قليل من الملح إلى الماء، ويُسخن القدر حتى يغلي.
+
+        </li>
+        <li>بعد الغليان، يُخفض الحرارة إلى وسط، ويُغطى القدر بغطاء.
+
+        </li>
+        <li>يُطهى ورق العنب لمدة تتراوح بين 45 دقيقة إلى ساعة على نار منخفضة.
+
+        </li>
+        <li>يُقدم ورق العنب ساخناً، ويمكن تقديمه إما بمفرده أو مع صلصة الزبادي على الجانب.
+
+        </li>
+
+    </ol>
+    </div>
+    <script>
+        function typeWriterEffect(element, speed) {
+            const text = element.innerText;
+            element.innerHTML = '';
+    
+            text.split('').forEach((char, index) => {
+                setTimeout(() => {
+                    element.innerHTML += char;
+                }, speed * index);
+            });
+        }
+    
+        const ingredientsList = document.getElementById('ingredients-list');
+        const stepsList = document.getElementById('steps-list');
+    
+        const typingSpeed = 20;
+    
+        const ingredientItems = ingredientsList.getElementsByTagName('li');
+        Array.from(ingredientItems).forEach((item) => {
+            typeWriterEffect(item, typingSpeed);
+        });
+    
+        const stepItems = stepsList.getElementsByTagName('li');
+        Array.from(stepItems).forEach((item) => {
+            typeWriterEffect(item, typingSpeed);
+        });
+    </script>
+
+</body>
+</html>

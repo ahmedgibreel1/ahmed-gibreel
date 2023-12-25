@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            #home .navbar {
+                background-color: rgba(51, 51, 51, 0.478);
+                overflow: hidden;
+                text-align: center;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+            }
+
+            #home .logo {
+                float: left;
+                padding: 14px 16px;
+                color: #f2f2f2;
+                text-decoration: none;
+                font-size: 32px;
+                font-weight: 700;
+            }
+
+            #home .navbar a {
+                display: inline-block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                margin-right: 60px;
+                margin-top: 4px;
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: 500;
+                position: relative;
+            }
+
+            #home .navbar a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            #home .sign-in-btn {
+                float: right;
+                background-color: #4caf4f86;
+                color: white;
+                padding: 16px 30px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 7px;
+                margin-right: 3px;
+            }
+
+            section {
+                width: 100%;
+                height: calc(100vh - 70px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                position: relative;
+            }
+
+            #home {
+                min-height: 100vh;
+                background: linear-gradient(
+                        rgba(0, 0, 0, 0.485),
+                        rgba(0, 0, 0, 0.485)
+                    ),
+                    url("images/banner.jpg") no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            #home h1 {
+                text-align: center;
+                font-size: 48px;
+                font-weight: 700;
+                text-transform: capitalize;
+                color: #fff;
+            }
+
+            #home p {
+                font-size: 25px;
+                margin-bottom: 150px;
+                color: #fff;
+                text-align: center;
+            }
+
+            #about {
+                background: linear-gradient(
+                        rgba(0, 0, 0, 0.03),
+                        rgba(0, 0, 0, 0.03)
+                    ),
+                    url("images/aboutus1.jpg");
+                min-height: 100vh;
+                background-size: cover;
+                background-position: top;
+            }
+            #about h2 {
+                position: absolute;
+                top: 80px;
+                left: 20px;
+                padding: 40px;
+                font-size: 64px;
+                font-weight: 700;
+                color: #ffffff;
+            }
+
+            #about p {
+                position: absolute;
+                font-size: 28px;
+                color: #fff;
+                text-align: left;
+                top: 300px;
+                left: 58px;
+            }
+
+            #Recipes {
+                min-height: 100vh;
+                background-color: #121010;
+                position: relative;
+            }
+            #Recipes h2 {
+                position: absolute;
+                text-align: center;
+                font-size: 64px;
+                top: 1px;
+                color: aliceblue;
+            }
+
+            .recipe-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 300px;
+                height: 300px;
+                margin: 20px;
+                padding: 20px;
+                border-radius: 8px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(236, 232, 232, 0.884);
+                text-decoration: none;
+                color: #333;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            .recipe-card:hover {
+                transform: scale(1.05);
+            }
+
+            .recipe-card img {
+                width: 100%;
+                max-height: 100%;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                object-fit: cover;
+            }
+            #contact {
+                min-height: 100vh;
+                background-color: #121010;
+                position: relative;
+            }
+            #contact h1 {
+                position: absolute;
+                text-align: center;
+                font-size: 64px;
+                top: 1px;
+                color: aliceblue;
+            }
+            .container {
+                width: 90%;
+                background: #fff;
+                border-radius: 6px;
+                padding: 20px 60px 30px 40px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+            .container .content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .container .content .left-side {
+                width: 25%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 15px;
+                position: relative;
+            }
+            .content .left-side::before {
+                content: "";
+                position: absolute;
+                height: 70%;
+                width: 2px;
+                right: -15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #afafb6;
+            }
+            .content .left-side .details {
+                margin: 14px;
+                text-align: center;
+            }
+            .content .left-side .details i {
+                font-size: 30px;
+                color: #3e2093;
+                margin-bottom: 10px;
+            }
+            .content .left-side .details .topic {
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .content .left-side .details .text-one,
+            .content .left-side .details .text-two {
+                font-size: 14px;
+                color: #afafb6;
+            }
+            .container .content .right-side {
+                width: 75%;
+                margin-left: 75px;
+            }
+            .content .right-side .topic-text {
+                font-size: 23px;
+                font-weight: 600;
+                color: #3e2093;
+            }
+            .right-side .input-box {
+                height: 50px;
+                width: 100%;
+                margin: 12px 0;
+            }
+            .right-side .input-box input,
+            .right-side .input-box textarea {
+                height: 100%;
+                width: 100%;
+                border: none;
+                outline: none;
+                font-size: 16px;
+                background: #f0f1f8;
+                border-radius: 6px;
+                padding: 0 15px;
+                resize: none;
+            }
+            .right-side .message-box {
+                min-height: 110px;
+            }
+            .right-side .input-box textarea {
+                padding-top: 6px;
+            }
+            .right-side .button {
+                display: inline-block;
+                margin-top: 12px;
+            }
+            .right-side .button input[type="button"] {
+                color: #fff;
+                font-size: 18px;
+                outline: none;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 6px;
+                background: #3e2093;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .button input[type="button"]:hover {
+                background: #5029bc;
+            }
+            .footer-distributed {
+                background: #121010;
+                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+                box-sizing: border-box;
+                width: 100%;
+                text-align: left;
+                font: bold 16px sans-serif;
+                padding: 55px 50px;
+            }
+
+            .footer-distributed .footer-left,
+            .footer-distributed .footer-center,
+            .footer-distributed .footer-right {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .footer-distributed .footer-left {
+                width: 40%;
+            }
+
+            .footer-distributed h3 {
+                color: #ffffff;
+                font: normal 36px "Open Sans", cursive;
+                margin: 0;
+            }
+
+            .footer-distributed h3 span {
+                color: lightseagreen;
+            }
+
+            .footer-distributed .footer-links {
+                color: #ffffff;
+                margin: 20px 0 12px;
+                padding: 0;
+            }
+
+            .footer-distributed .footer-links a {
+                display: inline-block;
+                line-height: 1.8;
+                font-weight: 400;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .footer-distributed .footer-company-name {
+                color: #222;
+                font-size: 14px;
+                font-weight: normal;
+                margin: 0;
+            }
+
+            .footer-distributed .footer-center {
+                width: 35%;
+            }
+
+            .footer-distributed .footer-center i {
+                background-color: #33383b;
+                color: #ffffff;
+                font-size: 25px;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 42px;
+                margin: 10px 15px;
+                vertical-align: middle;
+            }
+
+            .footer-distributed .footer-center i.fa-envelope {
+                font-size: 17px;
+                line-height: 38px;
+            }
+
+            .footer-distributed .footer-center p {
+                display: inline-block;
+                color: #ffffff;
+                font-weight: 400;
+                vertical-align: middle;
+                margin: 0;
+            }
+
+            .footer-distributed .footer-center p span {
+                display: block;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 2;
+            }
+
+            .footer-distributed .footer-center p a {
+                color: lightseagreen;
+                text-decoration: none;
+            }
+
+            .footer-distributed .footer-links a:before {
+                content: "|";
+                font-weight: 300;
+                font-size: 20px;
+                left: 0;
+                color: #fff;
+                display: inline-block;
+                padding-right: 5px;
+            }
+
+            .footer-distributed .footer-links .link-1:before {
+                content: none;
+            }
+
+            .footer-distributed .footer-right {
+                width: 20%;
+            }
+
+            .footer-distributed .footer-company-about {
+                line-height: 20px;
+                color: #92999f;
+                font-size: 13px;
+                font-weight: normal;
+                margin: 0;
+            }
+
+            .footer-distributed .footer-company-about span {
+                display: block;
+                color: #ffffff;
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .footer-distributed .footer-icons {
+                margin-top: 25px;
+            }
+
+            .footer-distributed .footer-icons a {
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+                background-color: #33383b;
+                border-radius: 2px;
+
+                font-size: 20px;
+                color: #ffffff;
+                text-align: center;
+                line-height: 35px;
+
+                margin-right: 3px;
+                margin-bottom: 5px;
+            }
+
+            @media (max-width: 880px) {
+                .footer-distributed {
+                    font: bold 14px sans-serif;
+                }
+
+                .footer-distributed .footer-left,
+                .footer-distributed .footer-center,
+                .footer-distributed .footer-right {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 40px;
+                    text-align: center;
+                }
+
+                .footer-distributed .footer-center i {
+                    margin-left: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section id="home">
+            <div class="navbar">
+                <div class="logo">Cooking Recipes</div>
+                <a href="index.html">Home</a>
+                <a href="#about">About</a>
+                <a href="#Recipes">Recipes</a>
+                <a href="#contact">Contact</a>
+                <button
+                    class="sign-in-btn"
+                    onclick="window.location.href='/regist.html'">
+                    SIGN UP
+                </button>
+            </div>
+            <div>
+                <h1>Make meals with a little zeal</h1>
+                <p>
+                    “Cooking with kids is not just about ingredients, recipes,
+                    and cooking. It’s about harnessing<br />
+                    imagination, empowerment, and creativity.”
+                </p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br />
+                Exercitationem aut totam rerum minus itaque doloribus commodi<br />
+                maiores nisi velit, pariatur voluptates facilis saepe
+                mollitia<br />
+                excepturi animi. Deserunt beatae consectetur eum,
+                exercitationem<br />
+                iure reiciendis et aspernatur suscipit repellat soluta sint
+                neque vel sit dolorum<br />
+                voluptatum consequatur voluptatem, nam accusamus impedit,
+                explicabo nobis animi? <br />Quis, aut dolorum tempore magnam
+                tempora cum adipisci dolore possimus deserunt,<br />
+                ab quia error qui suscipit earum explicabo nihil nostrum, nam
+                dolor distinctio.<br />
+                Iusto enim odit corporis reiciendis eaque pariatur perspiciatis
+                amet explicabo.<br />
+                Qui, optio? Magni quisquam voluptatem, eveniet nisi recusandae
+                quos dolorem magnam<br />! Earum impedit sed beatae.
+            </p>
+        </section>
+
+        <section id="Recipes">
+            <h2>Recipes</h2>
+
+            <a href="recipes/1.html" class="recipe-card">
+                <img src="images/pizaa.jpg" />
+            </a>
+
+            <a href="recipes/2.html" class="recipe-card">
+                <img src="images/chicken.jpg" />
+            </a>
+
+            <a href="recipes/4.html" class="recipe-card">
+                <img src="images/grapeleaves.jpg" />
+            </a>
+
+            <a href="recipes/5.html" class="recipe-card">
+                <img src="images/mulukhiyah.jpg" />
+            </a>
+
+            <a href="recipes/3.html" class="recipe-card">
+                <img src="images/shawerma.jpg" />
+            </a>
+        </section>
+
+        <section id="contact">
+            <h1>CONTACT US</h1>
+            <div class="container">
+                <div class="content">
+                    <div class="left-side">
+                        <div class="address details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="topic">Address</div>
+                            <div class="text-one">tanta</div>
+                            <div class="text-two">gharbia</div>
+                        </div>
+                        <div class="phone details">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="topic">Phone</div>
+                            <div class="text-one">+20 102 019 5239</div>
+                            <div class="text-two">+0096 3434 5678</div>
+                        </div>
+                        <div class="email details">
+                            <i class="fas fa-envelope"></i>
+                            <div class="topic">Email</div>
+                            <div class="text-one">cookingrecipes@gmail.com</div>
+                            <div class="text-two">info.cooking@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="topic-text">Send us a message</div>
+                        <p>
+                            If you have any work from me or any types of quries
+                            related to my tutorial, you can send me message from
+                            here. It's my pleasure to help you.
+                        </p>
+                        <form action="#">
+                            <div class="input-box">
+                                <input
+                                    type="text"
+                                    placeholder="Enter your name" />
+                            </div>
+                            <div class="input-box">
+                                <input
+                                    type="text"
+                                    placeholder="Enter your email" />
+                            </div>
+                            <div class="input-box message-box"></div>
+                            <div class="button">
+                                <input type="button" value="Send Now" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-distributed">
+            <div class="footer-left">
+                <h3>Cooking<span>recipes</span></h3>
+
+                <p class="footer-links">
+                    <a href="index.html" class="link-1">Home</a>
+
+                    <a href="#about">About</a>
+
+                    <a href="#">Faq</a>
+
+                    <a href="#contact">Contact</a>
+                </p>
+
+                <p class="footer-company-name">
+                    all rights reserved for cooking recipes @2023
+                </p>
+            </div>
+
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p>
+                        <span>Samatay Kotor</span> Tanta Egypt
+                    </p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+20 102 019 5239</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p>
+                        <a href="cookingrecipes@company.com"
+                            >cookingrecipes@company.com</a
+                        >
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    Lorem ipsum dolor sit amet, consectateur adispicing elit.
+                    Fusce euismod convallis velit, eu auctor lacus vehicula sit
+                    amet.
+                </p>
+
+                <div class="footer-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

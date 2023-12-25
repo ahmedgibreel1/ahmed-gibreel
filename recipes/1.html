@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>البيتزا</title>
+</head>
+<style>
+    body{
+        background-image:linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,0.30)),url(rimage/backgroundrecipe1.jpg);
+        background-position: center;
+        background-size: cover;
+        min-height: 100vh;
+    }
+    div{
+        color: #fff;
+    }
+    h1{
+        text-align: center;
+        font-size: 64px;
+    
+    }
+    h2{
+    
+        font-size: 32px;
+        
+    }
+    li{
+    
+        font-size: 24px;
+        text-decoration: none;
+    }
+    h3{
+        
+        font-size: 32px;
+    }
+</style>
+<body>
+    
+    
+<div dir="rtl">
+    <h1>وصفة البيتزا</h1>
+
+    <h2>مكونات </h2>
+    <ul id="ingredients-list">
+        <li>1 عجينة بيتزا</li>
+        <li>1 كوب صلصة بيتزا</li>
+        <li>2 كوب جبنة موزاريلا مبشورة</li>
+        <li>إضافات متنوعة (مثل البيبروني، الفطر، الفلفل الحلو، إلخ.)</li>
+    </ul>
+
+    <h3>طريقة التحضير</h3>
+    <ol id="steps-list">
+        <li>سخني الفرن إلى 475 درجة فهرنهايت (245 درجة مئوية).</li>
+        <li>نفرد عجينة البيتزا على سطح مرشوش بالدقيق بالسمك المرغوب.</li>
+        <li>وزعي صلصة البيتزا فوق العجينة، مع ترك حدود للقشرة.</li>
+        <li>نرش جبنة الموزاريلا بالتساوي على الصلصة.</li>
+        <li>أضف الطبقة المفضلة لديك.</li>
+        <li>اخبزيها في الفرن المسخن مسبقاً لمدة 12-15 دقيقة أو حتى تصبح القشرة ذهبية اللون وتنضج الجبنة.</li>
+        <li>أخرجيها من الفرن، قطعيها إلى شرائح واستمتعي بالبيتزا محلية الصنع!</li>
+    </ol>
+</div>
+<script>
+    function typeWriterEffect(element, speed) {
+        const text = element.innerText;
+        element.innerHTML = '';
+
+        text.split('').forEach((char, index) => {
+            setTimeout(() => {
+                element.innerHTML += char;
+            }, speed * index);
+        });
+    }
+
+    const ingredientsList = document.getElementById('ingredients-list');
+    const stepsList = document.getElementById('steps-list');
+
+    
+    const typingSpeed = 20;
+
+    
+    const ingredientItems = ingredientsList.getElementsByTagName('li');
+    Array.from(ingredientItems).forEach((item) => {
+        typeWriterEffect(item, typingSpeed);
+    });
+
+    
+    const stepItems = stepsList.getElementsByTagName('li');
+    Array.from(stepItems).forEach((item) => {
+        typeWriterEffect(item, typingSpeed);
+    });
+</script>
+
+</body>
+</html>

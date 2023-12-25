@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>الشاورما</title>
+</head>
+<style>
+    body{
+        background-image:linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,0.30)),url(rimage/backgroundrecipe3.jpg);
+        background-position: center;
+        background-size: cover;
+        min-height: 100vh;
+    }
+    div{
+        color: #fff;
+    }
+    h1{
+        text-align: center;
+        font-size: 64px;
+    
+    }
+    h2{
+    
+        font-size: 32px;
+        
+    }
+    li{
+    
+        font-size: 24px;
+        text-decoration: none;
+    }
+    h3{
+        
+        font-size: 32px;
+    }
+</style>
+<body>
+    
+    
+<div dir="rtl">
+    <h1>وصفة الشاورما</h1>
+
+    <h2>مكونات </h2>
+    <ul>
+        <li>500 جرام من أفخاذ الدجاج الخالية من العظم والمقطعة إلى شرائح رفيعة</li>
+        <li>4 فصوص ثوم، مفرومة</li>
+        <li>2 ملعقة كبيرة زبادي عادي</li>
+        <li>2 ملعقة كبيرة زيت زيتون</li>
+        <li>2 ملعقة كبيرة عصير ليمون</li>
+        <li>1 ملعقة صغيرة كمون مطحون</li>
+        <li>1 ملعقة صغيرة بابريكا</li>
+        <li>1/2 ملعقة صغيرة كركم مطحون</li>
+        <li>1/2 ملعقة صغيرة قرفة مطحونة</li>
+        <li>الملح والفلفل حسب الذوق</li>
+        <li>خبز البيتا أو الخبز المسطح</li>
+        <li>شرائح طماطم، خيار، بصل (للتقديم)</li>
+        <li>صلصة الطحينة أو صلصة الثوم (اختياري للتقديم)</li>
+
+
+
+    </ul>
+
+    <h3>طريقة التحضير</h3>
+    <ol>
+        <li>في وعاء، اخلطي الثوم المفروم واللبن الزبادي وزيت الزيتون وعصير الليمون والكمون والبابريكا والكركم والقرفة والملح والفلفل.</li>
+        <li>أضيفي قطع الدجاج إلى التتبيلة، وتأكدي من تغطيتها جيدًا.</li>
+        <li>يغطى ويوضع في الثلاجة لمدة ساعة على الأقل أو طوال الليل للحصول على أفضل النتائج.</li>
+        <li>قم بتسخين الشواية أو المقلاة على نار متوسطة عالية.</li>
+        <li>اطهي شرائح الدجاج المتبلة على الشواية أو المقلاة لمدة 5-7 دقائق على كل جانب أو حتى تنضج بالكامل وتتفحم قليلاً.</li>
+        <li>قم بتسخين خبز البيتا أو الخبز المسطح على الشواية أو في محمصة الخبز.</li>
+        <li>ضعي كمية سخية من الدجاج المطبوخ على الخبز الساخن.</li>
+        <li>أضف شرائح الطماطم والخيار والبصل وأي صلصات مرغوبة (مثل صلصة الطحينة أو الثوم).</li>
+        <li>لفي الخبز حول الحشوة لتشكلي شطيرة الشاورما.</li>
+        <li>تقدم الشاورما فوراً وهي دافئة.</li>
+
+    </ol>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to simulate typewriter effect
+        function typeWriterEffect(element, text, speed) {
+            let i = 0;
+            const interval = setInterval(function () {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, speed);
+        }
+    
+        const liElements = document.querySelectorAll('li');
+    
+        
+        liElements.forEach(function (li, index) {
+            const text = li.textContent;
+            li.innerHTML = ''; 
+            typeWriterEffect(li, text, 1 * (index + 1)); 
+        });
+    });
+    </script>
+
+
+
+</body>
+</html>

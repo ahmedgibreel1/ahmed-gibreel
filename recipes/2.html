@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>الدجاج المشوي</title>
+</head>
+<style>
+    body{
+        background-image:linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,0.30)),url(rimage/backgroundrecipe2.jpg);
+        background-position: center;
+        background-size: cover;
+        min-height: 100vh;
+    }
+    div{
+        color: #fff;
+    }
+    h1{
+        text-align: center;
+        font-size: 64px;
+    
+    }
+    h2{
+    
+        font-size: 32px;
+        
+    }
+    li{
+    
+        font-size: 24px;
+        text-decoration: none;
+    }
+    h3{
+        
+        font-size: 32px;
+    }
+</style>
+<body>
+    
+    
+<div dir="rtl">
+    <h1>وصفة الدجاج المشوي</h1>
+
+    <h2>مكونات</h2>
+    <ul id="ingredients-list">
+        <li>4 صدور دجاج مخلية من العظم والجلد</li>
+        <li>2 ملعقة كبيرة زيت زيتون</li>
+        <li>2 فص ثوم، مفروم</li>
+        <li>1 ملعقة صغيرة بابريكا</li>
+        <li>الملح والفلفل حسب الذوق</li>
+    </ul>
+    
+
+    <h3>طريقة التحضير</h3>
+    <ol id="instructions-list">
+        <li>تسخين الشواية إلى حرارة متوسطة إلى عالية.</li>
+        <li>في وعاء صغير، اخلطي زيت الزيتون والثوم المفروم والبابريكا والملح والفلفل.</li>
+        <li>دهن صدور الدجاج بخليط زيت الزيتون.</li>
+        <li>ضعي الدجاج على الشواية واطهيه لمدة 6-8 دقائق لكل جانب أو حتى ينضج.</li>
+        <li>أخرجه من الشواية واتركه يرتاح لبضع دقائق قبل التقديم.</li>
+        
+    </ol>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to simulate typewriter effect
+    function typeWriterEffect(element, text, speed) {
+        let i = 0;
+        const interval = setInterval(function () {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(interval);
+            }
+        }, speed);
+    }
+
+    
+    const liElements = document.querySelectorAll('li');
+
+    
+    liElements.forEach(function (li, index) {
+        const text = li.textContent;
+        li.innerHTML = ''; 
+        typeWriterEffect(li, text, 5 * (index + 1)); 
+    });
+});
+</script>
+
+
+</body>
+</html>

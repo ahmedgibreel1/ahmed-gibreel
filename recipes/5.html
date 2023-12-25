@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>الملوخية</title>
+</head>
+<style>
+    body{
+        background-image:linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,0.30)),url(rimage/backgroundrecipe1.jpg);
+        background-position: center;
+        background-size: cover;
+        min-height: 100vh;
+    }
+    div{
+        color: #fff;
+    }
+    h1{
+        text-align: center;
+        font-size: 64px;
+    
+    }
+    h2{
+    
+        font-size: 32px;
+        
+    }
+    li{
+    
+        font-size: 24px;
+        text-decoration: none;
+    }
+    h3{
+        
+        font-size: 32px;
+    }
+</style>
+<body>
+    
+    
+<div dir="rtl">
+    <h1>وصفةالملوخية</h1>
+
+    <h2>مكونات </h2>
+    <ul id="ingredients-list">
+       <li>2 كوب ملوخية مفرومة (يفضل استخدام الملوخية الطازجة إذا كانت متوفرة)
+    </li>
+       <li>1 كيلو طماطم مقطعة إلى مكعبات صغيرة
+    </li>
+       <li>1 كيلو لحم دجاج مقطع إلى قطع صغيرة
+    </li>
+       <li>1 بصلة كبيرة مفرومة
+    </li>
+       <li>4 فصوص ثوم مهروسة
+    </li>
+       <li>1/2 كوب زيت نباتي
+    </li>
+       <li>عصير ليمونة واحدة
+    </li>
+       <li>ملح وفلفل حسب الذوق
+    </li>
+       <li>6 أكواب ماء
+    </li>
+       <li>رشة بهارات مشكلة (اختياري)
+    </li>
+
+    </ul>
+
+    <h3>طريقة التحضير</h3>
+    <ol id="steps-list">
+        <li>في قدر كبير، قم بتسخين الزيت على نار متوسطة، ثم أضف البصل وقلبه حتى يصبح شفافًا.
+
+        </li>
+        <li>أضف الثوم المهروس وقلبه لمدة دقيقتين حتى ينبعث العطر.
+
+        </li>
+        <li>أضف قطع الدجاج إلى القدر وقلبها حتى تحمر.
+
+        </li>
+        <li>أضف قطع الطماطم واستمر في القلب حتى تصبح طرية وتتكون صلصة.
+
+        </li>
+        <li>أضف الملوخية المفرومة إلى الخليط وقلبها جيدًا.
+
+        </li>
+        <li>أضف الماء واترك المزيج يغلي.</li>
+
+        </li>اترك الملوخية تطهى لمدة تتراوح بين 30-40 دقيقة على نار هادئة، وتحركها بين الحين لتجنب التماسك.</li>
+
+
+        
+        <li>أضف عصير الليمون والملح والفلفل حسب الذوق، ويمكن إضافة البهارات المشكلة إذا كنت ترغب.
+
+        </li>
+        <li>قدم الملوخية ساخنة، ويمكن تقديمها مع الأرز أو الخبز.
+
+        </li>
+        <li>يمكن تزيين الملوخية بشرائح الليمون عند التقديم.</li>
+        
+    </ol>
+</div>
+<script>
+    function typeWriterEffect(element, speed) {
+        const text = element.innerText;
+        element.innerHTML = '';
+
+        text.split('').forEach((char, index) => {
+            setTimeout(() => {
+                element.innerHTML += char;
+            }, speed * index);
+        });
+    }
+
+    const ingredientsList = document.getElementById('ingredients-list');
+    const stepsList = document.getElementById('steps-list');
+
+    
+    const typingSpeed = 20;
+
+
+    const ingredientItems = ingredientsList.getElementsByTagName('li');
+    Array.from(ingredientItems).forEach((item) => {
+        typeWriterEffect(item, typingSpeed);
+    });
+
+    const stepItems = stepsList.getElementsByTagName('li');
+    Array.from(stepItems).forEach((item) => {
+        typeWriterEffect(item, typingSpeed);
+    });
+</script>
+
+
+
+</body>
+</html>
